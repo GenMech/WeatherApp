@@ -115,5 +115,5 @@ function dateTimeManage(DateComponents) {
     let month = months[DateComponents.getMonth()];
     let date = DateComponents.getDate();
 
-    return `${hr}:${min} ${ampm} | ${month} ${date} , ${year}`;
+    return `${hr}:${min} ${ampm} | ${month} ${date} , ${year}`;   
 }
