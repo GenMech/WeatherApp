@@ -84,7 +84,7 @@ if(weatherType.textContent == 'Clear') {
 
 } else if(weatherType.textContent == 'Thunderstorm') {
 
-    document.body.style.backgroundImage = "url('Image/Thunderstorm.jpg')";
+    document.body.style.backgroundImage = "url('Image/ThunderStorm.jpg')";
     let thunder = document.getElementById('icon-desc');
     thunder.innerHTML = '<i class="wi wi-thunderstorm"></i>'
 
@@ -98,22 +98,33 @@ if(weatherType.textContent == 'Clear') {
 }
 
 
-let date = document.getElementById('date');
-let todayDate = new Date();
-date.innerText = dateTimeManage(todayDate);
+// let date = document.getElementById('date');
+// let todayDate = new Date();
+// date.innerText = dateTimeManage(todayDate);
 
-// To Manage date and time 
-function dateTimeManage(DateComponents) {
+// // To Manage date and time 
+// function dateTimeManage(DateComponents) {
 
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    let hr = DateComponents.getHours();
-    let min = DateComponents.getMinutes();
-    let ampm = hr >= 12 ? 'pm' : 'am';
+//     let hr = DateComponents.getHours();
+//     let min = DateComponents.getMinutes();
+//     let sec = DateComponents.getSeconds();
+//     let ampm = hr >= 12 ? 'pm' : 'am';
 
-    let year = DateComponents.getFullYear();
-    let month = months[DateComponents.getMonth()];
-    let date = DateComponents.getDate();
+//     let year = DateComponents.getFullYear();
+//     let month = months[DateComponents.getMonth()];
+//     let date = DateComponents.getDate();
 
-    return `${hr}:${min} ${ampm} | ${month} ${date} , ${year}`;   
-}
+//     return `${hr}:${min}:${sec} ${ampm} | ${month} ${date} , ${year}`;   
+// }
+
+function myClock() {         
+    setInterval(() => {
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        a = new Date();
+        time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds() + ' ' + '|' + ' ' + months[a.getMonth()] + ' ' + a.getDate() + ',' + ' ' + a.getFullYear();
+        document.getElementById('date').innerHTML = time;
+      }, 1000);
+  }
+  myClock();
